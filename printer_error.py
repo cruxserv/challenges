@@ -5,7 +5,4 @@ def printer_error(s):
     for letters in s:
         if letters in error_codes:
             errors += 1
-    print(f"{errors}/{len(s)}")
-
-
-printer_error("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz")
+    return f"{errors}/{len(s)}"
