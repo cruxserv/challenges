@@ -9,10 +9,5 @@ def validate_pin(pin):
         print(False)
 
 
-validate_pin("-12345")
-
-validate_pin("1.234")
-
-validate_pin("a234")
-
-validate_pin(".234")
+# def validate_pin(pin):
+#     return len(pin) in (4, 6) and pin.isdigit()

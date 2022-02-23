@@ -1,0 +1,6 @@
+sticky keys return string after removing doubles
+main_string = main_string.replace(sub_str, replace_with, 1)
+
+matrix window
+
+first and last letter of items in list match, return true or false
