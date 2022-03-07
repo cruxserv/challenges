@@ -12,9 +12,9 @@ def rgb(r, g, b):
     if b > 255:
         b = 255
 
-    r = hex(r)[2:4]
-    g = hex(g)[2:4]
-    b = hex(b)[2:4]
+    r = hex(r)[2:]
+    g = hex(g)[2:]
+    b = hex(b)[2:]
     if len(r) == 1:
         r = '0' + r
     if len(b) == 1:
@@ -22,11 +22,11 @@ def rgb(r, g, b):
     if len(g) == 1:
         g = '0' + g
     res = r+g+b
-    print(res.upper())
+    return res.upper()
 
-    # print(letters)
-# rgb(255, 255, 255)
-
-
-rgb(0, 0, 0)
-# rgb(1, 2, 3)
+# def rgb(r, g, b):
+#     def get_hex(s):
+#         if s > 255: s = 255
+#         if s < 0: s = 0
+#         return hex(s)[2:].upper() if len(hex(s)[2:]) > 1 else "0" + hex(s)[2:]
+#     return get_hex(r) + get_hex(g) + get_hex(b)

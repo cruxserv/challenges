@@ -1,9 +1,4 @@
-list1 = [1, 2, 4]
-list2 = [1, 3, 4]
-output = sorted(list1 + list2)
-print(output)
-
-
+# # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -12,18 +7,21 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        Dummy = [ListNode]
-        Dummy.next = min(list1[0], list2[0])
-        for i in fl:
-            fl[i].next = f[i+1]
-        if not list1 or list2:
-            return []
-        elif list1 and not list2:
-            return list1
-        elif list2 and not list1:
-            return list2
-        else:
-            return Dummy.next
+        Dummy = ListNode()
+        tail = Dummy
 
+        while list1 and list2:
+            if list1.val < list2.val:
+                tail.next = list1
+                list1 = list1.next
+            else:
+                tail.next = list2
+                list2 = list2.next
+            tail = tail.next
 
-mergeTwoLists([1, 2, 4], [1, 3, 4])
+        if list1:
+            tail.next = list1
+        elif list2:
+            tail.next = list2
+
+        return Dummy.next
